@@ -1,0 +1,22 @@
+<div class="col s12 m6">
+  <div class="card orange lighten-3">
+    <div class="card-content black-text">
+      <p style="float: right;">writer: <b><%= @blog.user.username %></b></p>
+      <span class="card-title" style="font-weight: bold;"><%= @blog.title %></span>
+      <p><%= @blog.text %></p>
+    </div>
+  <div class="blog__comments-list orange lighten-5">
+    <% @comments.each do |comment| %>
+    <div class="blog__comment"><b><%= comment.user[:username] %></b>'s comment: <%= comment.text %></div>
+    <% end %>
+  </div>
+</div>
+
+<div class="blog__comment-form">
+  <% if current_user %>
+    <%= form_tag("/blogs/#{@blog.id}/comments", method: :post) do %>
+      <textarea cols="30" name="text" placeholder="put your comment here" rows="3"></textarea>
+      <input type="submit" value="Submit comment">
+    <% end %>
+  <% end %>
+</div>

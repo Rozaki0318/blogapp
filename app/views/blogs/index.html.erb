@@ -1,0 +1,7 @@
+<div class="row" >
+  <% @blogs.each do |blog| %>
+    <%= render 'blog', blog: blog %>
+  <% end %>
+</div>
+<div class="paginate orange lighten-1"><%= paginate(@blogs) %>
+</div>

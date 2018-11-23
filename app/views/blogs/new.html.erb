@@ -1,0 +1,27 @@
+<div class="contents">
+  <%= form_for @blog, :url => {:action => 'create'} do |f| %>
+    <h3>Please fill the blanks below!</h3>
+    <div class="input-field col s6 white">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="input-field col s6 white">
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+    </div>
+    <div class="input-field col s12 white">
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+

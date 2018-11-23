@@ -1,0 +1,22 @@
+<div class="mypage">
+  <p><strong>Here is <%= @name %>'s page</strong></p>
+  <div class="row blue-grey lighten-4" >
+  <% @blogs.each do |blog| %>
+    <div class="col s12 m6">
+      <div class="card orange lighten-3">
+        <div class="card-content black-text">
+          <p style="float: right;">writer: <b><%= blog.user.username %></b></p>
+          <span class="card-title" style="font-weight: bold;"><%= blog.title %></span>
+          <p><%= blog.text %></p>
+        </div>
+        <div class="card-action">
+          <div class="blog__delete-btn"><%= link_to "delete", "/blogs/#{blog.id}", method: :delete %></div>
+          <div class="blog__edit-btn"><%= link_to "edit", "/blogs/#{blog.id}/edit", method: :get %></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <%= paginate(@blogs) %>
+</div>
+

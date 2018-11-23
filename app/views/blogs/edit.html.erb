@@ -1,0 +1,20 @@
+<div class="contents row">
+  <%= form_for @blog, :url => {:action => 'update'} do |f| %>
+    <h3>please edit your blog.</h3>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+    </div>
+    <div class="textarea">
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

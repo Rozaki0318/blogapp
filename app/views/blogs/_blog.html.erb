@@ -1,0 +1,12 @@
+<div class="col s12 m6">
+  <div class="card orange lighten-3">
+    <div class="card-content black-text">
+      <p style="float: right;">writer: <b><%= blog.user.username %></b></p>
+      <span class="card-title" style="font-weight: bold;"><%= blog.title %></span>
+      <p><%= blog.text %></p>
+    </div>
+    <div class="card-action">
+      <%= link_to 'open', "/blogs/#{blog.id}", method: :get, :style=>"color:white;" %>
+    </div>
+  </div>
+</div>

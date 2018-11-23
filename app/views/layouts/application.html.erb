@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blogapp</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+<!--     <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Unica+One::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script> -->
+  </head>
+
+  <body class="body blue-grey lighten-4">
+    <header>
+      <nav class="nav orange lighten-1">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo black-text"><b>BLOG APP</b></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+            <li><a class="post" href="/users/sign_out" data-method="delete">LOGOUT</a></li>
+            <li><a class="post" href="/users/<%= current_user.id %>">MYPAGE</a></li>
+            <li><a class="post" href="/blogs/new">POST</a></li>
+            <% else %>
+            <li><a class="post" href="/users/sign_in">SignIn</a></li>
+            <li><a class="post" href="/users/sign_up">SignUp</a></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <%= yield %>
+
+    <footer class="footer orange lighten-1">
+      <p class="copyright textalign center">
+        ©️ 2018 RyoyaOzaki.
+      </p>
+    </footer>
+
+  </body>
+</html>
