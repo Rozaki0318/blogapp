@@ -4,6 +4,7 @@
       <p style="float: right;">writer: <b><%= @blog.user.username %></b></p>
       <span class="card-title" style="font-weight: bold;"><%= @blog.title %></span>
       <p><%= @blog.text %></p>
+      <div class="card-image"><%= image_tag("#{@blog.image_url}") %></div>
     </div>
   <div class="blog__comments-list orange lighten-5">
     <% @comments.each do |comment| %>
