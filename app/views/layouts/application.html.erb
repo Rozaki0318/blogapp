@@ -35,13 +35,16 @@
     <header>
       <nav class="nav orange lighten-1">
         <div class="nav-wrapper">
-          <a href="/" class="brand-logo black-text"><b>BLOG APP</b></a>
+          <a href="/" class="left-align black-text"><b>BLOG APP</b></a>          
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <% if user_signed_in? %>
+            <li><a href="https://twitter.com/OzakiRoy?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @OzakiRoy</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
             <li><a class="post" href="/users/sign_out" data-method="delete">LOGOUT</a></li>
             <li><a class="post" href="/users/<%= current_user.id %>">MYPAGE</a></li>
             <li><a class="post" href="/blogs/new">POST</a></li>
             <% else %>
+            <li><a href="https://twitter.com/OzakiRoy?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @OzakiRoy</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
             <li><a class="post" href="/users/sign_in">SignIn</a></li>
             <li><a class="post" href="/users/sign_up">SignUp</a></li>
             <% end %>

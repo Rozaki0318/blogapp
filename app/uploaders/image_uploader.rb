@@ -4,8 +4,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
+  # storage :file
   storage :fog
-  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -34,7 +34,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [100, 100]
+    process resize_to_fit: [200, 200]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -45,7 +45,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  def filename
-    "#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename
-  end
+  # def filename
+  #   "#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename
+  # end
 end
