@@ -4,7 +4,7 @@
       <p style="float: right;">writer: <b><%= blog.user.username %></b></p>
       <span class="card-title" style="font-weight: bold;"><%= blog.title %></span>
       <p><%= blog.text %></p>
-      <div class="card-image"><%= image_tag("#{blog.image_url(:thumb)}") %></div>
+      <div class="card-image" style="width: 100px; height: 100px;"><%= image_tag("#{blog.image_url(:thumb)}") %></div>
     </div>
     <div class="card-action">
       <%= link_to 'open', "/blogs/#{blog.id}", method: :get, :style=>"color:white;" %>
