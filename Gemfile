@@ -40,9 +40,10 @@ gem 'kaminari'
 gem 'devise'
 #Image Uploader
 gem 'carrierwave'
-gem 'rmagick', require: 'RMagick'
+gem 'rmagick'
 
 gem 'aws-sdk', '~> 2'
+gem 'fog-aws', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
